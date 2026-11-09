@@ -1,5 +1,3 @@
-
-
 <!--
 **Bhavika-Giyanani/Bhavika-Giyanani** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
@@ -41,7 +39,7 @@ Here are some ideas to get you started:
 - 🏛️ Served as **Backend Team Lead** at **Code Vimarsh (MSU Coding Club)**.
 - ♟️ **International FIDE Rated Chess Player** (Achieved 2018) & **4-Time Inter-Faculty Gold Medalist Captain**.
 - 🎓 Pursuing **MCA** at MSU Baroda | Graduated **BCA with 9.1 CGPA**.
-- 💬 Ask me about **LangChain, Docker, Kubernetes, MongoDB, React, Node.js, Python, FastAPI, RAG, WebSockets, & Chess Tactics**.
+- 💬 Ask me about **LangChain, Docker, Kubernetes, MongoDB, PostgreSQL, Supabase, React, TypeScript, Node.js, Python, FastAPI, RAG, WebSockets, & Chess Tactics**.
 - 📫 Reach out to me: **[bhavikavgiyanani@gmail.com](mailto:bhavikavgiyanani@gmail.com)**
 
 ---
@@ -52,6 +50,7 @@ Here are some ideas to get you started:
 
 <p>
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
   <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java" />
   <img src="https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white" alt="C++" />
@@ -66,6 +65,7 @@ Here are some ideas to get you started:
   <img src="https://img.shields.io/badge/LangChain-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white" alt="LangChain" />
   <img src="https://img.shields.io/badge/Gemini_API-4E75F6?style=for-the-badge&logo=google&logoColor=white" alt="Gemini API" />
   <img src="https://img.shields.io/badge/RAG_Pipelines-8B5CF6?style=for-the-badge&logo=databricks&logoColor=white" alt="RAG" />
+  <img src="https://img.shields.io/badge/pgvector-336791?style=for-the-badge&logo=postgresql&logoColor=white" alt="pgvector" />
   <img src="https://img.shields.io/badge/ChromaDB-FF6F00?style=for-the-badge&logo=database&logoColor=white" alt="ChromaDB" />
   <img src="https://img.shields.io/badge/Groq_Whisper-F55036?style=for-the-badge&logo=openai&logoColor=white" alt="Groq Whisper" />
 </p>
@@ -84,6 +84,9 @@ Here are some ideas to get you started:
 **Databases, Cloud & DevOps**
 
 <p>
+  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL" />
+  <img src="https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white" alt="Supabase" />
+  <img src="https://img.shields.io/badge/Prisma-2D3748?style=for-the-badge&logo=prisma&logoColor=white" alt="Prisma" />
   <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB" />
   <img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="AWS" />
   <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" />
@@ -96,13 +99,16 @@ Here are some ideas to get you started:
 
 ### 🚀 Featured Projects
 
-#### 🧠 [NotesGraph AI – Lecture-to-Notes & Semantic Chat](https://github.com/Bhavika-Giyanani/NotesGraph-AI)
-> **An end-to-end AI system converting spoken academic lectures into revision-ready structured notes and contextual chat via RAG.**
+#### 🧠 [NotesGraph AI – Lecture-to-Notes & Grounded Lecture Chat](https://github.com/Bhavika-Giyanani/NotesGraph-AI)
+> **An end-to-end AI system that turns lecture recordings into timestamped transcripts, structured study notes, and chat answers grounded in what the speaker actually said.**
 
-- **Audio Ingestion**: Preprocesses audio chunks with `pydub` and transcribes via **Groq Whisper API** (multilingual support).
-- **RAG Vector Search**: Embeds chunks using **Gemini API** into **ChromaDB** for real-time semantic Q&A.
-- **Automated Note Synthesis**: Generates exam-relevant points, core summaries, and downloadable PDF study notes.
-- **Tech Stack**: `Python` • `FastAPI` • `LangChain` • `Gemini API` • `ChromaDB` • `Groq Whisper` • `pydub`
+[🔗 Live Demo](https://notesgraph-ai.onrender.com/) • [💻 Source Code](https://github.com/Bhavika-Giyanani/NotesGraph-AI)
+
+- **Resumable Audio Ingestion**: Uploads up to 500 MB with `tus-js-client` straight to private **Supabase Storage**; processing continues in the background, and audio is chunked with `ffmpeg` and transcribed with **Groq Whisper** while keeping segment-level timestamps. A pasted transcript works too.
+- **Structured Note Synthesis**: **Gemini** generates summaries, key concepts, exam-relevant points, announcements, and off-topic remarks, with a Groq fallback if Gemini is temporarily unavailable. Notes export as **PDF** (ReportLab) or **Markdown**.
+- **Grounded RAG Chat**: Transcript chunks are embedded with Gemini into **Supabase pgvector** and retrieved per user and lecture; answers cite timestamped passages you can jump to in the recording, and out-of-scope questions are identified instead of guessed.
+- **Secure Workspace**: **Supabase Auth**, **Row Level Security**, a private audio bucket, and owner-scoped queries keep every lecture, transcript, note, and chat private. Subject folders, transcript search, and persistent light/dark themes round out the UI.
+- **Tech Stack**: `Python` • `FastAPI` • `LangChain` • `Gemini API` • `Groq Whisper` • `Supabase (Auth, PostgreSQL, pgvector, Storage)` • `React` • `TypeScript` • `Tailwind CSS` • `Docker` • `Render`
 
 #### 🌱 [GreenMind – Symbiotic Growth Initiative](https://youtu.be/HGnvS5JjY3E)
 > **Team-based CSR sustainability web application promoting ethical learning, productivity, and verified real-world tree planting.**
@@ -112,12 +118,16 @@ Here are some ideas to get you started:
 - **Real-World Impact**: Automatically initiates real tree planting upon user completing level 5.
 - **Tech Stack**: `HTML5` • `CSS3` • `JavaScript` • `jQuery` • `Node.js` • `Express` • `MongoDB` • `WebSocket` • `SVGator`
 
-#### ⚡ [ZentroTasks – Real-Time Task Manager](https://github.com/Bhavika-Giyanani/ZentroTasks)
-> **Dynamic full-stack task & team management platform featuring zero-refresh live synchronization.**
+#### 🚚 [TransitOps – Fleet Operations Platform](https://github.com/Bhavika-Giyanani/TransitOps)
+> **Role-based fleet operations platform for managing vehicles, drivers, trip dispatch, maintenance, compliance, and fleet financials, with built-in dispatch safety rules.**
 
-- **Instant Synchronization**: Bi-directional CRUD state distribution across clients using **Socket.io**.
-- **Visual Analytics**: Interactive data visualization of task loads and user throughput with **Recharts**.
-- **Tech Stack**: `React` • `Node.js` • `Express` • `MongoDB` • `Socket.io` • `Recharts` • `Swagger`
+[🔗 Live Demo](https://transitops-8req.onrender.com/) • [💻 Source Code](https://github.com/Bhavika-Giyanani/TransitOps)
+
+- **Dispatch Guardrails**: Excludes suspended drivers and vehicles under maintenance, and validates licence status and cargo capacity before a trip can be dispatched.
+- **Role-Based Workspaces**: Tailored views and permissions for Organization Admins, Fleet Managers, Drivers, Safety Officers, and Financial Analysts, secured with **JWT** and secure cookies.
+- **Live Operations & Compliance**: **Socket.IO** broadcasts operational changes to connected clients, while **node-cron** runs hourly licence and safety checks that can suspend drivers and send expiry reminder emails.
+- **Onboarding & Reporting**: Email verification and **Razorpay** payments (verified server-side) activate each organization, with PDF receipts. Fleet KPIs, cost per kilometre, and vehicle ROI come with CSV/PDF exports and **Swagger** API docs.
+- **Tech Stack**: `React` • `TypeScript` • `Vite` • `Tailwind CSS` • `Node.js` • `Express` • `PostgreSQL` • `Prisma` • `Socket.IO` • `Razorpay` • `node-cron` • `Swagger`
 
 ---
 
