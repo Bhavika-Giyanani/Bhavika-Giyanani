@@ -145,8 +145,8 @@ Here are some ideas to get you started:
 ### 📊 GitHub & Coding Telemetry
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Bhavika-Giyanani&show_icons=true&theme=github_dark&hide_border=true&count_private=true&title_color=6366f1&icon_color=8b5cf6" alt="GitHub Stats" width="48%" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Bhavika-Giyanani&layout=compact&theme=github_dark&hide_border=true&title_color=6366f1" alt="Top Languages" width="48%" />
+  <img src="./profile-summary-card-output/github_dark/3-stats.svg" alt="GitHub Stats" width="48%" />
+<img src="./profile-summary-card-output/github_dark/2-most-commit-language.svg" alt="Top Languages" width="48%" />
   <br/>
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=Bhavika-Giyanani&theme=github_dark&hide_border=true&ring=6366f1&fire=ec4899" alt="GitHub Streak" width="97%" />
   <br/>
