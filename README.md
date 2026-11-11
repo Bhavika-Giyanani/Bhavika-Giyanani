@@ -148,7 +148,13 @@ Here are some ideas to get you started:
   <img src="./profile-summary-card-output/github_dark/3-stats.svg" alt="GitHub Stats" width="48%" />
 <img src="./profile-summary-card-output/github_dark/1-repos-per-language.svg" alt="Top Languages" width="48%" />
   <br/>
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Bhavika-Giyanani&theme=github_dark&hide_border=true&ring=6366f1&fire=ec4899" alt="GitHub Streak" width="97%" />
+  <!-- GitHub Contribution Streak -->
+  <img
+    src="./profile/streak.svg"
+    alt="GitHub Streak"
+    width="97%"
+  />
+
   <br/>
   <a href="https://leetcode.com/u/Bhavika-Giyanani/">
     <img src="https://leetcard.jacoblin.cool/Bhavika-Giyanani?theme=github_dark&font=Plus%20Jakarta%20Sans" alt="LeetCode Stats" width="97%" />
