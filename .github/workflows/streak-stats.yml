@@ -24,7 +24,7 @@ jobs:
         with:
           options: user=${{ github.repository_owner }}&theme=dark&hide_border=true&ring=6366f1&fire=ec4899&timezone=Asia/Kolkata&disable_animations=true
           path: profile/streak.svg
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PROFILE_TOKEN }}
 
       - name: Commit streak stats
         run: |
